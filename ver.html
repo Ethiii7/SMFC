@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Desplegable</title>
+  <style>
+    /* Estilo del contenedor del menú */
+    .menu-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Estilo del menú desplegable */
+    .dropdown-menu {
+      display: none; /* Oculto por defecto */
+      position: absolute;
+      background-color: #f9f9f9;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+      padding: 10px;
+      z-index: 1;
+    }
+
+    /* Estilo de los elementos del menú */
+    .dropdown-menu a {
+      color: black;
+      text-decoration: none;
+      display: block;
+      padding: 8px 12px;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #ddd;
+    }
+
+    /* Mostrar el menú al hacer clic */
+    .menu-container.active .dropdown-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <a href="#" id="menu-toggle">Menú</a>
+    <div class="dropdown-menu">
+      <a href="#opcion1">Opción 1</a>
+      <a href="#opcion2">Opción 2</a>
+      <a href="#opcion3">Opción 3</a>
+    </div>
+  </div>
+
+  <script>
+    // Lógica para mostrar/ocultar el menú al hacer clic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuContainer = document.querySelector('.menu-container');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+      menuContainer.classList.toggle('active'); // Alterna la clase 'active'
+    });
+
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!menuContainer.contains(e.target)) {
+        menuContainer.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

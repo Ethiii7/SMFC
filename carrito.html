@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="src/LOGO1.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección Mexicana</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8fc761a27e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="inicio">
+        <img src="src/fb.png" alt="" class="fondo">
+            <div class="contenedor-menu fixed-top">
+                <a class="miz" href="index.html">
+                        <img src="src/LOGO1.png" alt="">
+                </a>
+                <a class="mde" href="#" id="menu-toggle">
+                        <img class="mh" src="src/mha.png" alt="">
+                </a>
+                <div class="dropdown-menu">
+                    <a href="tienda.html"><i class="fa-solid fa-store fa-s" style="color: #225c4b;"></i>Tienda</a>
+                    <a href="sesion.html"><i class="fa-solid fa-address-card fa-s" style="color: #225c4b;"></i>Cuenta</a>
+                </div>
+            </div>
+    </section>
+    <script>
+    // Lógica para mostrar/ocultar el menú al hacer clic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuContainer = document.querySelector('.contenedor-menu');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+      menuContainer.classList.toggle('active'); // Alterna la clase 'active'
+    });
+
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!menuContainer.contains(e.target)) {
+        menuContainer.classList.remove('active');
+      }
+    });
+  </script>
+    <div class="playeras">
+        <div class="bannerp">
+            <img class="bannerl" src="src/bannerjersey.png" alt="" width="100%">
+            <div class="jerseylo">
+                <div class="p1">
+                    <img class="playe" src="src/VF.png" alt="">
+                </div>
+                <div class="p2">
+                    <img class="playe" src="src/LF.png" alt="">
+                    <h2>Jersey Local</h2>
+                </div>
+                <div class="p3">
+                    <img class="playe" src="src/TF.png" alt="">
+                </div>
+            </div>
+            <div class="jerseyvi">
+                <div class="p1">
+                    <img class="playe" src="src/TF.png" alt="">
+                </div>
+                <div class="p2">
+                    <img class="playe" src="src/VF.png" alt="">
+                    <h2>Jersey Visitante</h2>
+                </div>
+                <div class="p3">
+                    <img class="playe" src="src/LF.png" alt="">
+                </div>
+            </div>
+            <div class="jerseyte">
+                <div class="p1">
+                    <img class="playe" src="src/LF.png" alt="">
+                </div>
+                <div class="p2">
+                    <img class="playe" src="src/TF.png" alt="">
+                    <h2>Jersey Tercero</h2>
+                </div>
+                <div class="p3">
+                    <img class="playe" src="src/VF.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+const secciones = ["jerseylo", "jerseyte", "jerseyvi"];
+let actual = 0;
+
+function mostrarSeccion(index) {
+  document.querySelectorAll(".jerseylo, .jerseyte, .jerseyvi")
+    .forEach(s => s.style.display = "none");
+  document.querySelector(`.${secciones[index]}`).style.display = "flex";
+}
+
+mostrarSeccion(actual);
+
+document.querySelectorAll(".jerseylo .p3, .jerseyte .p3, .jerseyvi .p3").forEach(el => {
+  el.addEventListener("click", () => {
+    actual = (actual + 1) % 3;
+    mostrarSeccion(actual);
+  });
+});
+
+document.querySelectorAll(".jerseylo .p1, .jerseyte .p1, .jerseyvi .p1").forEach(el => {
+  el.addEventListener("click", () => {
+    actual = (actual - 1 + 3) % 3;
+    mostrarSeccion(actual);
+  });
+});
+
+document.querySelectorAll(".jerseylo .p2, .jerseyte .p2, .jerseyvi .p2").forEach(el => {
+  el.addEventListener("click", () => {
+    const img = el.querySelector("img");
+    img.classList.toggle("reverso");
+  });
+});
+</script>
+<script>
+    // Mostrar jugadores según la posición
+document.querySelectorAll(".opciones ul").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const posicion = btn.textContent.trim(); // POR, DEF, MD o DEL
+    document.querySelectorAll(".fichaj1, .fichaj2, .fichaj3, .fichaj4").forEach(img => {
+      img.style.display = (img.alt === posicion) ? "block" : "none";
+    });
+  });
+});
+
+// Mostrar por defecto los porteros
+document.querySelector('ul:nth-child(1)').click();
+</script>
+<script>
+document.querySelectorAll(".jerseylo .p2, .jerseyte .p2, .jerseyvi .p2").forEach(el => {
+  el.addEventListener("click", () => {
+    const img = el.querySelector("img");
+    const actual = img.src;
+    const reversos = {
+      "VF.png": "VB.png",
+      "LF.png": "LB.png",
+      "TF.png": "TB.png"
+    };
+    const nombre = actual.split("/").pop();
+
+    // Cambiar a reverso
+    if (reversos[nombre]) {
+      img.classList.add("reverso");
+      img.src = `src/${reversos[nombre]}`;
+
+      // Volver a original después de 3 segundos
+      setTimeout(() => {
+        img.classList.remove("reverso");
+        img.src = `src/${nombre}`;
+      }, 3000);
+    }
+  });
+});
+</script>
+
+
+<script>
+let lastScroll = 0;
+const navbar = document.querySelector(".navbar");
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    navbar.style.top = "-100px"; // Oculta al bajar
+  } else {
+    navbar.style.top = "0"; // Muestra al subir
+  }
+
+  lastScroll = currentScroll;
+});
+</script>
+
+</body>
+</html>

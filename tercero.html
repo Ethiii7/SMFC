@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="src/LOGO1.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección Mexicana</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8fc761a27e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="inicio">
+        <div class="contenedor-menu fixed-top">
+                <a class="miz" href="index.html">
+                        <img src="src/LOGO1.png" alt="">
+                </a>
+                <a class="mde" href="#" id="menu-toggle">
+                        <img class="mh" src="src/mha.png" alt="">
+                </a>
+                <div class="dropdown-menu">
+                    <a href="tienda.html"><i class="fa-solid fa-store fa-s" style="color: #225c4b;"></i>Tienda</a>
+                    <a href="sesion.html"><i class="fa-solid fa-address-card fa-s" style="color: #225c4b;"></i>Cuenta</a>
+                </div>
+        </div>
+        <section class="tallas">
+        <h1 class="titulo">SELECCIÓN NACIONAL DE MÉXICO</h1>
+        <div class="contenedor-pla">
+            <div class="izqui">
+                <div class="arri">
+                    <img src="src/banoro.png" alt="">
+                    <style>     
+                        .arri img{
+                            width: 634px;
+                        }
+                        
+                        .abi{
+                            width: 290px;
+                        }
+                        
+                        .abd{
+                            width: 280px;
+                        }
+
+                        .abd, .abi img{
+                            height: auto;
+                        }
+
+                        @media (max-width: 767px) {
+                            .arri img{
+                                width: 344px;
+                            }
+
+                            .abi{
+                            width: 48%;
+                            padding-left: 0.2rem;
+                            }
+                            
+                            .abd{
+                                width: 50%;
+                            }
+
+                            .abi img{
+                                width: 168px;
+                                height: 217.75px;
+                            }
+
+                            .abd img{
+                                width: 179px;
+                                
+                            }
+                        }
+                    </style>
+                </div>
+                <div class="aba">
+                    <div class="abi">
+                        <img src="src/TI.png" alt="">
+                    </div>
+                    <div class="abd">
+                        <img src="src/TD2.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="dere">
+                <h1>JERSEY TERCERO</h1>
+                <h1>$2799</h1>
+                <form action="/submit" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Opcional">
+                <label for="dorsal">Dorsal:</label>
+                <input type="number" id="dorsal" name="dorsal" placeholder="Opcional">
+
+                <div class="tallas-botones">
+                <button id="btn1" type="button" onclick="activarBoton('btn1')">S</button>
+                <button id="btn2" type="button" onclick="activarBoton('btn2')">M</button>
+                <button id="btn3" type="button" onclick="activarBoton('btn3')">G</button>
+                </div>
+
+                <button type="submit"><i class="fa-solid fa-cart-plus"></i> Agregar al carrito</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    </section>
+    <section class="enlaces">
+        <a href="local.html">
+            <div class="anterior">
+                <img class="primera" src="src/LF.png" alt="" height="120px">
+            <i class="fa-solid fa-arrow-left"></i>
+        </div>
+        </a>
+        <a href="visitante.html">
+            <div class="siguiente">
+                <img class="visita" src="src/VF.png" alt="" height="120px">
+            <i class="fa-solid fa-arrow-right"></i>
+        </div>
+        </a>
+    </section>
+    <script>
+        // Función que activa un botón y desactiva los demás
+        function activarBoton(id) {
+            const botones = ['btn1', 'btn2', 'btn3'];
+            botones.forEach(botonId => {
+                const boton = document.getElementById(botonId);
+                if (botonId === id) {
+                    boton.classList.add('active'); // marca como activo
+                } else {
+                    boton.classList.remove('active'); // desmarca los demás
+                }
+            });
+        }
+    </script>
+    <script>
+    // Lógica para mostrar/ocultar el menú al hacer clic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuContainer = document.querySelector('.contenedor-menu');
+
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault(); // Evita el comportamiento predeterminado del enlace
+      menuContainer.classList.toggle('active'); // Alterna la clase 'active'
+    });
+
+    // Cierra el menú si se hace clic fuera de él
+    document.addEventListener('click', (e) => {
+      if (!menuContainer.contains(e.target)) {
+        menuContainer.classList.remove('active');
+      }
+    });
+  </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+
+</body>
+</html>
