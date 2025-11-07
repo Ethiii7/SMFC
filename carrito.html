@@ -14,7 +14,6 @@
 </head>
 <body>
     <section class="inicio">
-        <img src="src/fb.png" alt="" class="fondo">
             <div class="contenedor-menu fixed-top">
                 <a class="miz" href="index.html">
                         <img src="src/LOGO1.png" alt="">
@@ -27,7 +26,146 @@
                     <a href="sesion.html"><i class="fa-solid fa-address-card fa-s" style="color: #225c4b;"></i>Cuenta</a>
                 </div>
             </div>
+            <div class="carrito">
+              <div class="lado-izq">
+                <h1><i class="fa-solid fa-cart-shopping fa-s" style="color: #444444; padding-bottom: 50px;"></i>Carrito </h1>
+                <div class="fila usuario">
+                  <h3><i class="fa-solid fa-user fa-xs" style="color: #444444;"></i> Cuenta:</h3>
+                  <h3 class="bd">AAAA</h3>
+                </div>
+                <div class="fila datos">
+                    <h3>JERSEY</h3>
+                    <h3 class="bd">LVT</h3>
+                    <h3>TALLA</h3>
+                    <h3 class="bd">SMG</h3>
+                    <h3 class="bd">$2799</h3>
+                </div>
+                <div class="fila tota">
+                  <h3>TOTAL</h3>
+                  <h3 class="suma">$2799</h3>
+                </div>
+                <div class="boton-compra">
+                    <button type="submit"><i class="fa-solid fa-money-check-dollar fa-s"></i> Comprar</button>
+                </div>
+              </div>
+              <div class="lado der">
+                <img src="src/banc.png" alt="" style="border-radius: 25px;">
+              </div>
+            </div>
     </section>
+    <style>
+      .carrito{
+        display: flex;
+        padding-top: 35px;
+        justify-content: center;
+        align-items: center;
+      }
+      .lado-izq{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+      .lado-izq h1 i{
+        padding-bottom: 30px !important;
+      }
+      .lado-der{
+        width: 30%;
+      }
+      .bd{
+        color: #444444;
+      }
+      .suma{
+        color: #225c4b;
+      }
+      button{
+        color: white;
+        font-size: 1.5rem;
+        background-color: #225c4b;
+        border-radius: 25px;
+        padding: 10px;
+        width: 20%;
+      }
+      .fila {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 10px 0;
+      }
+
+      .boton-compra {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .usuario{
+        margin-left: 45px;
+        align-self: flex-start;
+      }
+      .datos{
+        margin-left: 45px;
+        margin-right: 45px;
+        justify-content: space-between;
+      }
+      .tota{
+        margin-left: 45px;
+        margin-right: 45px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .boton-compra button {
+        width: 200px;
+      }
+      @media (max-width: 767px) {
+      .carrito {
+        margin-top: 60px;
+        flex-direction: column;
+        padding: 20px;
+      }
+
+      .lado-izq, .lado-der {
+        width: 100%;
+        margin-left: 65px;
+        margin-right: 65px;
+      }
+
+      .fila {
+        align-items: center;
+        gap: 10px;
+      }
+
+      .usuario, .datos, .tota {
+        margin: 0;
+        justify-content: space-between;
+        padding-bottom: 30px;
+      }
+
+      .boton-compra {
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: 30px;
+      }
+
+      .boton-compra button {
+        width: 80%;
+        font-size: 1.2rem;
+        padding: 12px;
+      }
+
+      .lado-der img {
+        width: 80%;
+        height: auto;
+        margin-top: 20px;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+      }
+}
+    </style>
     <script>
     // Lógica para mostrar/ocultar el menú al hacer clic
     const menuToggle = document.getElementById('menu-toggle');
@@ -45,123 +183,7 @@
       }
     });
   </script>
-    <div class="playeras">
-        <div class="bannerp">
-            <img class="bannerl" src="src/bannerjersey.png" alt="" width="100%">
-            <div class="jerseylo">
-                <div class="p1">
-                    <img class="playe" src="src/VF.png" alt="">
-                </div>
-                <div class="p2">
-                    <img class="playe" src="src/LF.png" alt="">
-                    <h2>Jersey Local</h2>
-                </div>
-                <div class="p3">
-                    <img class="playe" src="src/TF.png" alt="">
-                </div>
-            </div>
-            <div class="jerseyvi">
-                <div class="p1">
-                    <img class="playe" src="src/TF.png" alt="">
-                </div>
-                <div class="p2">
-                    <img class="playe" src="src/VF.png" alt="">
-                    <h2>Jersey Visitante</h2>
-                </div>
-                <div class="p3">
-                    <img class="playe" src="src/LF.png" alt="">
-                </div>
-            </div>
-            <div class="jerseyte">
-                <div class="p1">
-                    <img class="playe" src="src/LF.png" alt="">
-                </div>
-                <div class="p2">
-                    <img class="playe" src="src/TF.png" alt="">
-                    <h2>Jersey Tercero</h2>
-                </div>
-                <div class="p3">
-                    <img class="playe" src="src/VF.png" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <script>
-const secciones = ["jerseylo", "jerseyte", "jerseyvi"];
-let actual = 0;
-
-function mostrarSeccion(index) {
-  document.querySelectorAll(".jerseylo, .jerseyte, .jerseyvi")
-    .forEach(s => s.style.display = "none");
-  document.querySelector(`.${secciones[index]}`).style.display = "flex";
-}
-
-mostrarSeccion(actual);
-
-document.querySelectorAll(".jerseylo .p3, .jerseyte .p3, .jerseyvi .p3").forEach(el => {
-  el.addEventListener("click", () => {
-    actual = (actual + 1) % 3;
-    mostrarSeccion(actual);
-  });
-});
-
-document.querySelectorAll(".jerseylo .p1, .jerseyte .p1, .jerseyvi .p1").forEach(el => {
-  el.addEventListener("click", () => {
-    actual = (actual - 1 + 3) % 3;
-    mostrarSeccion(actual);
-  });
-});
-
-document.querySelectorAll(".jerseylo .p2, .jerseyte .p2, .jerseyvi .p2").forEach(el => {
-  el.addEventListener("click", () => {
-    const img = el.querySelector("img");
-    img.classList.toggle("reverso");
-  });
-});
-</script>
-<script>
-    // Mostrar jugadores según la posición
-document.querySelectorAll(".opciones ul").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const posicion = btn.textContent.trim(); // POR, DEF, MD o DEL
-    document.querySelectorAll(".fichaj1, .fichaj2, .fichaj3, .fichaj4").forEach(img => {
-      img.style.display = (img.alt === posicion) ? "block" : "none";
-    });
-  });
-});
-
-// Mostrar por defecto los porteros
-document.querySelector('ul:nth-child(1)').click();
-</script>
-<script>
-document.querySelectorAll(".jerseylo .p2, .jerseyte .p2, .jerseyvi .p2").forEach(el => {
-  el.addEventListener("click", () => {
-    const img = el.querySelector("img");
-    const actual = img.src;
-    const reversos = {
-      "VF.png": "VB.png",
-      "LF.png": "LB.png",
-      "TF.png": "TB.png"
-    };
-    const nombre = actual.split("/").pop();
-
-    // Cambiar a reverso
-    if (reversos[nombre]) {
-      img.classList.add("reverso");
-      img.src = `src/${reversos[nombre]}`;
-
-      // Volver a original después de 3 segundos
-      setTimeout(() => {
-        img.classList.remove("reverso");
-        img.src = `src/${nombre}`;
-      }, 3000);
-    }
-  });
-});
-</script>
-
-
 <script>
 let lastScroll = 0;
 const navbar = document.querySelector(".navbar");
