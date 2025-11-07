@@ -861,7 +861,7 @@
 
 .tallas-botones button:hover,
 .tallas-botones button.active {
-  background-color: #1a4b3d;
+  background-color: #442525;
   transform: scale(1.05);
 }
 
